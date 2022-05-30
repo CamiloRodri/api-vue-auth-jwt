@@ -1,5 +1,5 @@
 <template>
-	<div id="app" class="container-fluid">
+	<div id="app">
 		<Nav />
 		<main>
 			<router-view/>
@@ -25,7 +25,7 @@ export default {
 		align-items: center;
 		padding-top: 40px;
 		padding-bottom: 40px; */
-		background-color: #47555e;
+		/* background-color: #47555e; */
 	}
 
 	.form-signin {

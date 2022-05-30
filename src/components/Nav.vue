@@ -6,15 +6,30 @@
 				<router-link to="/" class="navbar-brand">Inicio</router-link>
 				<div>
 					<ul class="navbar-nav me-auto mb-2 mb-md-0">
-                            <li class="nav-item" v-show="!user_autenticated">
-                                <router-link to="/login" class="nav-link active" aria-current="page">Login</router-link>
-                            </li>
-                            <li class="nav-item" v-show="!user_autenticated">
-                                <router-link to="/register" class="nav-link active" aria-current="page" href="#">Registro</router-link>
-                            </li>
-                            <li class="nav-item" v-show="user_autenticated">
-                                <a @click="logout" class="nav-link active" aria-current="page">Logout</a>
-                            </li>
+                        <li class="nav-item" v-show="user_autenticated">
+                            <router-link to="/speciality" class="nav-link active" aria-current="page">Especialidad</router-link>
+                        </li>
+                        <li class="nav-item" v-show="user_autenticated">
+                            <router-link to="/patient" class="nav-link active" aria-current="page">Paciente</router-link>
+                        </li>
+                        <li class="nav-item" v-show="user_autenticated">
+                            <router-link to="/doctor" class="nav-link active" aria-current="page">Doctor</router-link>
+                        </li>
+                        <li class="nav-item" v-show="user_autenticated">
+                            <router-link to="/diary" class="nav-link active" aria-current="page">Crear Agenda</router-link>
+                        </li>
+                        <li class="nav-item" v-show="user_autenticated">
+                            <router-link to="/appoinment" class="nav-link active" aria-current="page">Asignar Cita</router-link>
+                        </li>
+                        <li class="nav-item" v-show="!user_autenticated">
+                            <router-link to="/login" class="nav-link active" aria-current="page">Login</router-link>
+                        </li>
+                        <li class="nav-item" v-show="!user_autenticated">
+                            <router-link to="/register" class="nav-link active" aria-current="page" href="#">Registro</router-link>
+                        </li>
+                        <li class="nav-item" v-show="user_autenticated">
+                            <a @click="logout" class="nav-link active" aria-current="page">Logout</a>
+                        </li>
 					</ul>
 				</div>
 			</div>
@@ -23,8 +38,8 @@
 </template>
 
 <script>
-const axios = require('axios');
 import router from '@/router';
+const axios = require('axios');
 export default {
     name:'Nav',
     data() {
@@ -47,7 +62,8 @@ export default {
                 .post('http://127.0.0.1:8000/api/logout')
                 .then(response => {
                     localStorage.clear();
-                    router.push('/');
+                    // router.push('/login');
+                    location.reload();
                 })
                 .catch(error => {
                     alert("No se puede realizar esta acción");
