@@ -21,6 +21,9 @@
                         <li class="nav-item" v-show="user_autenticated">
                             <router-link to="/appoinment" class="nav-link active" aria-current="page">Asignar Cita</router-link>
                         </li>
+                        <li class="nav-item" v-show="user_autenticated">
+                            <router-link to="/reassign_appointment" class="nav-link active" aria-current="page">Reasignar Cita</router-link>
+                        </li>
                         <li class="nav-item" v-show="!user_autenticated">
                             <router-link to="/login" class="nav-link active" aria-current="page">Login</router-link>
                         </li>

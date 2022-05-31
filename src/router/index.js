@@ -3,6 +3,7 @@ import Doctor from '@/views/Doctor.vue'
 import Home from '@/views/Home.vue'
 import Login from '@/views/Login.vue'
 import Patient from '@/views/Patient.vue'
+import ReassignAppointment from '@/views/ReassignAppointment.vue'
 import Register from '@/views/Register.vue'
 import Speciality from '@/views/Speciality.vue'
 import Vue from 'vue'
@@ -20,6 +21,7 @@ const routes = [
   {path:'/speciality', component: Speciality},
   {path:'/patient', component: Patient},
   {path:'/doctor', component: Doctor},
+  {path:'/reassign_appointment', component: ReassignAppointment},
 ]
 
 const router = new VueRouter({
